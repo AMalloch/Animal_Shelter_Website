@@ -15,6 +15,7 @@ animal1 =Animal.new({
 })
 
 animal1.save
+animal1.update
 
 animal2 =Animal.new({
   "name" => "Angel",
@@ -62,6 +63,7 @@ owner1 = Owner.new({
 })
 
 owner1.save
+owner1.update
 
 owner2 = Owner.new({
   "animal" => animal3.id,

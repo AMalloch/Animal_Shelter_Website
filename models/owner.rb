@@ -47,6 +47,16 @@ class Owner
     return Animal.new(animal.first)
   end
 
+  def update()
+    sql = "UPDATE owners
+    SET (animal, first_name, second_name, dob, address,
+     city, post_code, email_address, phone_number)
+    = ($1, $2, $3, $4, $5, $6, $7, $8, $9) WHERE id = $10"
+    values = [@animal, @first_name, @second_name, @dob, @address,
+       @city, @post_code, @email_address, @phone_number, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.delete_all
     sql = "DELETE FROM owners"
     SqlRunner.run( sql )
