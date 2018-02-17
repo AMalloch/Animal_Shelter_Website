@@ -34,5 +34,9 @@ class Animal
     return result
   end
 
+  def self.delete_all
+    sql = "DELETE FROM animals"
+    SqlRunner.run( sql )
+  end
 
 end
