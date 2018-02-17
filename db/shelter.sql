@@ -21,5 +21,5 @@ CREATE TABLE animals
   age INT,
   species VARCHAR(255),
   breed VARCHAR(255),
-  adopt_status BOOLEAN,
+  adopt_status BOOLEAN
 );
