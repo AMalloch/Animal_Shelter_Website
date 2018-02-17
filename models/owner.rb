@@ -40,6 +40,13 @@ class Owner
     return result
   end
 
+  def self.id(id)
+    sql = "SELECT * FROM animals WHERE id = $1"
+    values = id
+    animal = SqlRunner.run(sql, values)
+    return Animal.new(animal.first)
+  end
+
   def self.delete_all
     sql = "DELETE FROM owners"
     SqlRunner.run( sql )
