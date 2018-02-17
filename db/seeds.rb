@@ -20,7 +20,7 @@ animal2 =Animal.new({
   "species" => "Dog",
   "breed" => "Yorkshire Terrier",
   "adopt_status" => false,
-  "admittion_date" => "4/02/2018"
+  "admittion_date" => "04/02/2018"
 })
 
 animal2.save
@@ -35,6 +35,17 @@ animal3 =Animal.new({
 })
 
 animal3.save
+
+animal4 =Animal.new({
+  "name" => "Lilly",
+  "age" => 6,
+  "species" => "Cat",
+  "breed" => "Tabby",
+  "adopt_status" => true,
+  "admittion_date" => "25/12/2017"
+})
+
+animal4.save
 
 owner1 = Owner.new({
   "animal" => animal1.id,

@@ -25,4 +25,14 @@ class Animal
     @id = animal.first()['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT *
+    FROM animals"
+    values = []
+    animals = SqlRunner.run(sql, values)
+    result = animals.map {|animal| Animal.new(animal)}
+    return result
+  end
+
+
 end
