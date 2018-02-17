@@ -45,4 +45,10 @@ class Owner
     SqlRunner.run( sql )
   end
 
+  def self.delete_by_id
+    sql = "DELETE FROM owners WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, id)
+  end
+
 end
