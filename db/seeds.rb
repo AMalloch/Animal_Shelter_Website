@@ -30,6 +30,7 @@ animal1 =Animal.new({
   "species" => "Cat"
   "breed" => "Maine Coon"
   "adopt_status" => true
+  "admittion_date" => "20/01/2018"
 })
 
 animal2 =Animal.new({
@@ -38,6 +39,7 @@ animal2 =Animal.new({
   "species" => "Dog"
   "breed" => "Yorkshire Terrier"
   "adopt_status" => false
+  "admittion_date" => "4/02/2018"
 })
 
 binding.pry
