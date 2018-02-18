@@ -7,6 +7,4 @@ require_relative("../models/owner.rb")
 class Animal_Test < MiniTest::Test
 
 
-
-
 end
