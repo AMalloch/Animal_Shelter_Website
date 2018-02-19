@@ -1,0 +1,15 @@
+<form class="" action="/adopt/search" method="get">
+  <input type="text" name="search_name" value="">
+  <input type="submit" value="Search">
+</form>
+
+<div class="scrollBox">
+  <ul>
+    <% @animals.each do |animal| %>
+      <li>
+        <%= animal.name %>
+        <a href="adopt/">Details</a>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -60,4 +60,36 @@ class Animal
     SqlRunner.run(sql, id)
   end
 
+  def self.search(search)
+    if search == nil
+      return []
+    end
+    search_with_wildcards = "%#{search}%"
+    sql = "select * from animals where LOWER(name) like LOWER($1)"
+    values = [search_with_wildcards]
+    animals = SqlRunner.run(sql, values)
+    animals = animals.map {|animal| Animal.new(animal)}
+    return animals
+  end
+
+  # select * from animals where LOWER(name) like LOWER('%ja%')
+
+  # def status_to_b__true
+  #   @adopt_status 't' = True
+  # end
+
+  # def status_to_b__false
+  #   @adopt_status 'f' = False
+  # end
+
+  #
+  # def self.species
+  #   sql = "SELECT * FROM animals WHERE species = $1"
+  #   values = [@id]
+  #   species = SqlRunner.run( sql, values )
+  #   result = Animal.new( species.first )
+  #   return result
+  # end
+
+
 end
