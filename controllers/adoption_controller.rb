@@ -5,15 +5,7 @@ get "/adopt" do
   erb(:"/adoption/index")
 end
 
-get "/adopt/search" do                    #perform a paginated query
+get "/adopt/search" do
   @animals = Animal.search(params[:search_name])
-  erb(:"adoption/search") #this is our form
+  erb(:"adoption/search")
 end
-# 
-# get "/adopt/details" do
-#   @animals = Animal.
-
-
-# def index
-#   @users = User.search(params[:search]).paginate(page: params[:page])
-# end

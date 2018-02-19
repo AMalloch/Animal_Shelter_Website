@@ -3,13 +3,13 @@ require_relative("../db/sql_runner")
 class Animal
 
   attr_reader :id
-  attr_accessor :name, :age, :species, :breed, :adopt_status, :admittion_date
+  attr_accessor :name, :age, :type, :breed, :adopt_status, :admittion_date
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @age = options['age'].to_i
-    @species = options['species']
+    @type = options['type']
     @breed = options['breed']
     @adopt_status = options['adopt_status']
     @admittion_date = options['admittion_date']
@@ -17,10 +17,10 @@ class Animal
 
   #remember to test relevant functions
   def save()
-    sql = "INSERT INTO animals(name, age, species, breed, adopt_status, admittion_date)
+    sql = "INSERT INTO animals(name, age, type, breed, adopt_status, admittion_date)
     VALUES($1, $2, $3, $4, $5, $6)
     RETURNING id"
-    values = [@name, @age, @species, @breed, @adopt_status, @admittion_date]
+    values = [@name, @age, @type, @breed, @adopt_status, @admittion_date]
     animal = SqlRunner.run(sql, values)
     @id = animal.first()['id'].to_i
   end
@@ -43,9 +43,9 @@ class Animal
 
   def update()
     sql = "UPDATE animals
-    SET (name, age, species, breed, adopt_status, admittion_date)
+    SET (name, age, type, breed, adopt_status, admittion_date)
     = ($1, $2, $3, $4, $5, $6) WHERE id = $7"
-    values = [@name, @age, @species, @breed, @adopt_status, @admittion_date, @id]
+    values = [@name, @age, @type, @breed, @adopt_status, @admittion_date, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -64,8 +64,8 @@ class Animal
     if search == nil
       return []
     end
-    search_with_wildcards = "%#{search}%"
-    sql = "select * from animals where LOWER(name) like LOWER($1)"
+    search_with_wildcards = "#{search}"
+    sql = "select * from animals where LOWER(type) = LOWER($1)"
     values = [search_with_wildcards]
     animals = SqlRunner.run(sql, values)
     animals = animals.map {|animal| Animal.new(animal)}
@@ -81,15 +81,5 @@ class Animal
   # def status_to_b__false
   #   @adopt_status 'f' = False
   # end
-
-  #
-  # def self.species
-  #   sql = "SELECT * FROM animals WHERE species = $1"
-  #   values = [@id]
-  #   species = SqlRunner.run( sql, values )
-  #   result = Animal.new( species.first )
-  #   return result
-  # end
-
 
 end

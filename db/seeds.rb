@@ -8,19 +8,18 @@ Owner.delete_all()
 animal1 =Animal.new({
   "name" => "Jasper",
   "age" => 9,
-  "species" => "Cat",
+  "type" => "Cat",
   "breed" => "Maine Coon",
   "adopt_status" => true,
   "admittion_date" => "20/01/2018"
 })
 
 animal1.save
-animal1.update
 
 animal2 =Animal.new({
   "name" => "Angel",
   "age" => 2,
-  "species" => "Dog",
+  "type" => "Dog",
   "breed" => "Yorkshire Terrier",
   "adopt_status" => false,
   "admittion_date" => "04/02/2018"
@@ -31,7 +30,7 @@ animal2.save
 animal3 =Animal.new({
   "name" => "Jaffar",
   "age" => 5,
-  "species" => "Snake",
+  "type" => "Snake",
   "breed" => "Corn Snake",
   "adopt_status" => true,
   "admittion_date" => "21/10/2017"
@@ -42,13 +41,24 @@ animal3.save
 animal4 =Animal.new({
   "name" => "Lilly",
   "age" => 6,
-  "species" => "Cat",
+  "type" => "Cat",
   "breed" => "Tabby",
   "adopt_status" => true,
   "admittion_date" => "25/12/2017"
 })
 
 animal4.save
+
+animal5 = Animal.new({
+  "name" => "Thumper",
+  "age" => 2,
+  "type" => "Rabbit",
+  "breed" => "Angora",
+  "adopt_status" => true,
+  "admittion_date" => "10/09/2017"
+})
+
+animal5.save
 
 owner1 = Owner.new({
   "animal" => animal1.id,
@@ -63,7 +73,6 @@ owner1 = Owner.new({
 })
 
 owner1.save
-owner1.update
 
 owner2 = Owner.new({
   "animal" => animal3.id,

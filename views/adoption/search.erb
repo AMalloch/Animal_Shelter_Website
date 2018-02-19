@@ -1,3 +1,5 @@
+<h3>What animal would you like? eg dog.</h3>
+
 <form class="" action="/adopt/search" method="get">
   <input type="text" name="search_name" value="">
   <input type="submit" value="Search">
@@ -7,8 +9,12 @@
   <ul>
     <% @animals.each do |animal| %>
       <li>
-        <%= animal.name %>
-        <a href="adopt/">Details</a>
+        <p>Name: <%= animal.name %></p>
+        <p>Age: <%= animal.age %></p>
+        <p>Type: <%= animal.type %></p>
+        <p>Breed: <%= animal.breed %></p>
+        <p>Adoption status: <%= animal.adopt_status %></p>
+        <p>Admittion date: <%= animal.admittion_date %></p>
       </li>
     <% end %>
   </ul>
