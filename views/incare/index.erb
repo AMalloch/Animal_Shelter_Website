@@ -1,9 +1,9 @@
-<h3>Animals in training or care.</h3>
+<h2>Animals in training or care.</h2>
 
 <% @animals.each do |animal| %>
   <% if animal.adopt_status == 'f' %>
 
-  <div>
+  <div class="incare">
     <p>Name: <%= animal.name %></p>
     <p>Age: <%= animal.age %></p>
     <p>Type: <%= animal.type %></p>

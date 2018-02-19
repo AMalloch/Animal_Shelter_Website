@@ -1,8 +1,9 @@
-<h3>Our Animals</h3>
+<h2>Our Animals</h2>
 
 <% @animals.each do |animal| %>
-  <% if animal.adopt_status == 't' %>
+<% if animal.adopt_status == 't' %>
 
+<div class="all_animals">
   <div>
     <p>Name: <%= animal.name %></p>
     <p>Age: <%= animal.age %></p>
@@ -11,6 +12,7 @@
     <p>Adoption status: <%= animal.adopt_status %></p>
     <p>Admittion date: <%= animal.admittion_date %></p>
   </div>
+</div>
 
-  <% end %>
+<% end %>
 <% end %>
