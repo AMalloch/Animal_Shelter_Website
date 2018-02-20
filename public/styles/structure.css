@@ -26,11 +26,11 @@ li {
 
 li a {
     display: block;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     color: white;
     text-align: center;
-    padding: 12px 14px;
+    padding: 7px;
     text-decoration: none;
     border: 2px groove white;
     width: 160px;

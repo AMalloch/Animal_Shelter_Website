@@ -47,6 +47,12 @@ post "/all_animals/:id/delete" do
   redirect to ("/")
 end
 
+post "/all_owners/:id/delete" do
+  owner = Owner.find(params[:id])
+  owner.delete_by_id
+  redirect to ("/")
+end
+
 get "/assign" do
   @owners = Owner.all()
   @animals = Animal.all()

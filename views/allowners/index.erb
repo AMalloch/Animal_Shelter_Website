@@ -14,6 +14,18 @@
   <p>Postcode: <%= owner.post_code %></p>
   <p>Email_address: <%= owner.email_address %></p>
   <p>Phone number: <%= owner.phone_number %></p>
+  <form class="" action="/all_owners/<%= owner.id %>/delete" method="post">
+    <input type="hidden" name="first_name" value="<%= owner.first_name %>"/>
+    <input type="hidden" name="second_name"  value="<%= owner.second_name %>"/>
+    <input type="hidden" name="animal" value="<%= owner.animal %>"/>
+    <input type="hidden" name="dob" value="<%= owner.dob %>"/>
+    <input type="hidden" name="address" value="<%= owner.address %>"/>
+    <input type="hidden" name="city" value="<%= owner.city %>"/>
+    <input type="hidden" name="postcode" value="<%= owner.post_code %>"/>
+    <input type="hidden" name="email_address" value="<%= owner.email_address %>"/>
+    <input type="hidden" name="phone_number" value="<%= owner.phone_number %>"/>
+    <input type="submit" value="Delete owner"/>
+  </form>
 </div>
 
 <% end %>
