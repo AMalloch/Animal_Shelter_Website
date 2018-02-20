@@ -34,9 +34,9 @@ class Animal
     return result
   end
 
-  def self.id(id)
+  def self.find(id)
     sql = "SELECT * FROM animals WHERE id = $1"
-    values = id
+    values = [id]
     animal = SqlRunner.run(sql, values)
     return Animal.new(animal.first)
   end
@@ -54,10 +54,10 @@ class Animal
     SqlRunner.run( sql )
   end
 
-  def self.delete_by_id()
+  def delete_by_id()
     sql = "DELETE FROM animals WHERE id = $1"
-    values = [id]
-    SqlRunner.run(sql, id)
+    values = [@id]
+    SqlRunner.run(sql, values)
   end
 
   def self.search(search)
@@ -74,9 +74,9 @@ class Animal
   # select * from animals where LOWER(name) like LOWER('%ja%')
   def status_to_b()
     if @adopt_status == 't'
-      return true
+      return "True"
     end
-    return false
+    return "False"
   end
-  
+
 end

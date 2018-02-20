@@ -1,4 +1,4 @@
-<h2>Our Animals</h2>
+<h2>Our adoptable animals</h2>
 
 <% @animals.each do |animal| %>
 <% if animal.adopt_status == 't' %>
@@ -8,8 +8,17 @@
     <p>Age: <%= animal.age %></p>
     <p>Type: <%= animal.type %></p>
     <p>Breed: <%= animal.breed %></p>
-    <p>Adoption status: <%= animal.adopt_status %></p>
+    <p>Adoption status: <%= animal.status_to_b %></p>
     <p>Admittion date: <%= animal.admittion_date %></p>
+   <form class="" action="/adopt/<%= animal.id %>" method="post">
+     <input type="hidden" name="name" value="<%= animal.name %>"/>
+     <input type="hidden" name="age"  value="<%= animal.age %>"/>
+     <input type="hidden" name="type" value="<%= animal.type %>"/>
+     <input type="hidden" name="breed" value="<%= animal.breed %>"/>
+     <input type="hidden" name="adopt_status" value="<%= 'f' %>"/>
+     <input type="hidden" name="admittion_date" value="<%= animal.admittion_date %>"/>
+     <input type="submit" value="Change Adoption"/>
+   </form>
 </div>
 
 <% end %>

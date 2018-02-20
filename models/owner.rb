@@ -3,7 +3,7 @@ require_relative("../db/sql_runner")
 class Owner
 
   attr_reader :id
-  attr_accessor :first_name, :second_name, :dob, :address, :city,
+  attr_accessor :animal, :first_name, :second_name, :dob, :address, :city,
   :post_code, :email_address, :phone_number
 
   def initialize( options )
@@ -40,9 +40,9 @@ class Owner
     return result
   end
 
-  def self.id(id)
+  def animal
     sql = "SELECT * FROM animals WHERE id = $1"
-    values = id
+    values = [@animal]
     animal = SqlRunner.run(sql, values)
     return Animal.new(animal.first)
   end
