@@ -1,6 +1,6 @@
 body {
   background: black url('/images/japheth-mast-329247.jpg');
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   color: white;
   font-family: 'Baskerville', serif;
@@ -14,7 +14,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: rgba(211,211,211,0.7)
+    background-color: rgba(190,190,190,0.8)
 }
 
 li {
@@ -29,11 +29,10 @@ li a {
     text-align: center;
     padding: 12px 14px;
     text-decoration: none;
-    border: 2px groove DarkGreen;
+    border: 2px groove white;
     width: 160px;
     height: 24px;
     margin-right: 1px;
-    border-radius: 12px;
 }
 
 /* Change the link color to #111 (black) on hover */
@@ -49,14 +48,13 @@ li a:hover {
   align-content: space-between;
   flex-direction: row;
   background-color: rgba(180,180,180,0.9);
-  border: 2px solid DarkGreen;
+  border: 2px solid lightgreen;
   padding-left: 20px;
   font-size: 20px;
+  font-weight: bold
 }
 
 .header img {
-  width: 1275px;
-  height: 110px;
   background: rgba(111,111,111,0);
 }
 
@@ -68,9 +66,11 @@ li a:hover {
   align-content: space-between;
   flex-direction: row;
   background-color: rgba(180,180,180,0.9);
-  border: 2px solid DarkGreen;
+  border: 2px solid lightgreen;
   padding-left: 20px;
   font-size: 20px;
+  font-weight: bold;
+  border-radius: 12px
 }
 
 h3 {
@@ -78,20 +78,28 @@ h3 {
 }
 
 h2 {
+  display: table;
   margin-left: 30px;
+  background-color: rgba(180,180,180,0.9);
+  border: 2px solid white;
+  padding: 10px;
+  border-radius: 12px
 }
 
 .news {
   color: yellow;
   border-radius: 12px;
   margin-top: 300px;
+  margin-left: 5px;
+  margin-bottom: 5px;
   display: inline-block;
-  border: 3px groove DarkGreen;
-  background-color: rgba(211,211,211,1);
+  border: 3px groove lightgreen;
+  background-color: rgba(190,190,190,1);
   font-weight: bold;
   text-align: center;
   padding-left: 10px;
-  padding-right: 10px
+  padding-right: 10px;
+  border-radius: 12px
 }
 
 .incare {
@@ -102,7 +110,30 @@ h2 {
   align-content: space-between;
   flex-direction: row;
   background-color: rgba(180,180,180,0.9);
-  border: 2px solid DarkGreen;
+  border: 2px solid lightgreen;
   padding-left: 20px;
   font-size: 20px;
+  font-weight: bold;
+  border-radius: 12px
+}
+
+.searchbox {
+  display: block;
+  margin-left: 30px;
+  margin-bottom: 30px
+}
+
+.footer {
+  height: 40px;
+  border: 2px white;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(190,190,190,0.8);
+  padding-bottom: 10px;
+  padding-right: 25px;
+  text-align: right;
+  font-size: 15px;
+  font-weight: bold
 }

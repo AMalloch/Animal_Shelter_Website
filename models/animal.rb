@@ -49,12 +49,12 @@ class Animal
     SqlRunner.run(sql, values)
   end
 
-  def self.delete_all
+  def self.delete_all()
     sql = "DELETE FROM animals"
     SqlRunner.run( sql )
   end
 
-  def self.delete_by_id
+  def self.delete_by_id()
     sql = "DELETE FROM animals WHERE id = $1"
     values = [id]
     SqlRunner.run(sql, id)
@@ -71,15 +71,12 @@ class Animal
     animals = animals.map {|animal| Animal.new(animal)}
     return animals
   end
-
   # select * from animals where LOWER(name) like LOWER('%ja%')
-
-  # def status_to_b__true
-  #   @adopt_status 't' = True
-  # end
-
-  # def status_to_b__false
-  #   @adopt_status 'f' = False
-  # end
-
+  def status_to_b()
+    if @adopt_status == 't'
+      return true
+    end
+    return false
+  end
+  
 end
