@@ -124,6 +124,15 @@ h2 {
   margin-bottom: 30px
 }
 
+.link {
+  display: table;
+  background-color: rgba(150,150,150,0.9);
+  border: 2px solid white;
+  padding: 10px;
+  border-radius: 12px
+  color: inherit;
+}
+
 /* .footer {
   height: 40px;
   border: 2px white;

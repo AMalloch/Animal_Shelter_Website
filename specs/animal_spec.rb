@@ -8,12 +8,12 @@ class Animal_Test < MiniTest::Test
 
   def test_adopt_status_is_boolean
     status = 't'
-    assert_equal(true, @animal.status_to_b(status))
+    assert_equal("True", @animal.status_to_b(status))
   end
 
   def test_adopt_status_is_boolean
     status = 'f'
-    assert_equal(false, @animal.status_to_b(status))
+    assert_equal("False", @animal.status_to_b(status))
   end
 
 end

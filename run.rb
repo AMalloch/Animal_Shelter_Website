@@ -24,6 +24,17 @@ get "/all_animals/new" do
   erb(:"/allanimals/new")
 end
 
+get "/all_animals/update/:id" do
+  @animals = Animal.find(params[:id])
+  erb(:"/all_animals/update")
+end
+
+post "/all_animals/:id" do
+  animal = Animal.new(params)
+  animal.update
+  redirect to "/all_animals"
+end
+
 get "/all_owners/new" do
   @owners = Owner.all()
   erb(:"/allowners/new")
@@ -44,13 +55,13 @@ end
 post "/all_animals/:id/delete" do
   animal = Animal.find(params[:id])
   animal.delete_by_id
-  redirect to ("/")
+  redirect to ("/all_animals")
 end
 
 post "/all_owners/:id/delete" do
   owner = Owner.find(params[:id])
   owner.delete_by_id
-  redirect to ("/")
+  redirect to ("/all_owners")
 end
 
 get "/assign" do
@@ -62,7 +73,7 @@ end
 post "/assign" do
   adoption = Adoption.new(params)
   adoption.save()
-  redirect to ("/")
+  redirect to ("/adopt")
 end
 
 post "/all_animals/:id/update" do
