@@ -1,7 +1,9 @@
 require_relative("../models/animal.rb")
 require_relative("../models/owner.rb")
+require_relative("../models/adoption.rb")
 require("pry-byebug")
 
+Adoption.delete_all()
 Animal.delete_all()
 Owner.delete_all()
 
@@ -61,7 +63,6 @@ animal5 = Animal.new({
 animal5.save
 
 owner1 = Owner.new({
-  "animal" => animal1.id,
   "first_name" => "Roy",
   "second_name" => "Cuthbertson",
   "dob" => "27/02/1979",
@@ -75,7 +76,6 @@ owner1 = Owner.new({
 owner1.save
 
 owner2 = Owner.new({
-  "animal" => animal3.id,
   "first_name" => "Kathleen",
   "second_name" => "Evans",
   "dob" => "1/09/1989",
@@ -87,6 +87,13 @@ owner2 = Owner.new({
 })
 
 owner2.save
+
+adoption1 = Adoption.new({
+  "animal_id" => animal1.id,
+  "owner_id" => owner1.id
+  })
+
+adoption1.save
 
 binding.pry
 nil

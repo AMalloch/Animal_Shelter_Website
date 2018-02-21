@@ -1,5 +1,6 @@
-DROP TABLE owners;
-DROP TABLE animals;
+DROP TABLE IF EXISTS adoptions;
+DROP TABLE IF EXISTS owners;
+DROP TABLE IF EXISTS animals;
 
 
 CREATE TABLE animals
@@ -16,7 +17,6 @@ CREATE TABLE animals
 CREATE TABLE owners
 (
   id SERIAL primary key,
-  animal INT REFERENCES animals(id) ON DELETE CASCADE,
   first_name VARCHAR(255),
   second_name VARCHAR(255),
   dob VARCHAR(255),
@@ -25,4 +25,11 @@ CREATE TABLE owners
   post_code VARCHAR(255),
   email_address VARCHAR(255),
   phone_number VARCHAR(255)
+);
+
+CREATE TABLE adoptions
+(
+  id SERIAL8 primary key,
+  animal_id INT references animals(id) ON DELETE CASCADE,
+  owner_id INT references owners(id) ON DELETE CASCADE
 );

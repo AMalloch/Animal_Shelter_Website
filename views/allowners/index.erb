@@ -7,7 +7,6 @@
 <div class="all_animals">
   <p>First name: <%= owner.first_name %></p>
   <p>Second name: <%= owner.second_name %></p>
-  <p>Animal: <%= owner.animal.name %></p>
   <p>Dob: <%= owner.dob %></p>
   <p>Address: <%= owner.address %></p>
   <p>City: <%= owner.city %></p>
@@ -17,7 +16,6 @@
   <form class="" action="/all_owners/<%= owner.id %>/delete" method="post">
     <input type="hidden" name="first_name" value="<%= owner.first_name %>"/>
     <input type="hidden" name="second_name"  value="<%= owner.second_name %>"/>
-    <input type="hidden" name="animal" value="<%= owner.animal %>"/>
     <input type="hidden" name="dob" value="<%= owner.dob %>"/>
     <input type="hidden" name="address" value="<%= owner.address %>"/>
     <input type="hidden" name="city" value="<%= owner.city %>"/>

@@ -56,17 +56,17 @@ end
 get "/assign" do
   @owners = Owner.all()
   @animals = Animal.all()
-  erb(:"/assign/index")
+  erb(:"/assign/new")
+end
+
+post "/assign" do
+  adoption = Adoption.new(params)
+  adoption.save()
+  redirect to ("/")
 end
 
 post "/all_animals/:id/update" do
   animal = Animal.new(params)
   animal.update()
-  redirect to ("/")
-end
-
-post "/assign/:id/update" do
-  owner = Owner.new(params)
-  owner.update()
   redirect to ("/")
 end

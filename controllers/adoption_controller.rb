@@ -1,7 +1,9 @@
 require_relative( '../models/animal.rb' )
+require_relative( '../models/adoption.rb')
 
 get "/adopt" do
   @animals = Animal.all()
+  @adoptions = Adoption.all()
   erb(:"/adoption/index")
 end
 
@@ -13,5 +15,5 @@ end
 post "/adopt/:id" do
   animal = Animal.new(params)
   animal.update
-  redirect to "/"
+  redirect to "/adopt"
 end

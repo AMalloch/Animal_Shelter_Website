@@ -23,3 +23,12 @@
 
 <% end %>
 <% end %>
+
+<% @adoptions.each do |adoption| %>
+
+<div class="all_animals">
+  <p>Owner name: <%= adoption.owner.first_name %></p>
+  <p>Animal name: <%= adoption.animal.name %></p>
+</div>
+
+<% end %>
