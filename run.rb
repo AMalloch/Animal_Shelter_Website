@@ -24,9 +24,9 @@ get "/all_animals/new" do
   erb(:"/allanimals/new")
 end
 
-get "/all_animals/update/:id" do
-  @animals = Animal.find(params[:id])
-  erb(:"/all_animals/update")
+get '/all_animals/:id/edit' do
+  @animals = Animal.find( params[:id] )
+  erb( :"/allanimals/update" )
 end
 
 post "/all_animals/:id" do
@@ -76,7 +76,7 @@ post "/assign" do
   redirect to ("/adopt")
 end
 
-post "/all_animals/:id/update" do
+post "/all_animals/update/:id" do
   animal = Animal.new(params)
   animal.update()
   redirect to ("/")

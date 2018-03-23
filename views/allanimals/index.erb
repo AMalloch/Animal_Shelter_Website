@@ -1,5 +1,4 @@
 <h2><a class="link" href="/all_animals/new">Add new animal</a></h2>
-<h2><a class="link" href="/all_animals/update">Update an animal</a></h2>
 
 <% @animals.each do |animal| %>
 
@@ -10,6 +9,7 @@
     <p>Breed: <%= animal.breed %></p>
     <p>Adoption status: <%= animal.status_to_b %></p>
     <p>Admittion date: <%= animal.admittion_date %></p>
+    <h2><a class="link" href="/all_animals/<%= animal.id %>/edit">Update an animal</a></h2>
    <form class="" action="/all_animals/<%= animal.id %>/delete" method="post">
      <input type="hidden" name="name" value="<%= animal.name %>"/>
      <input type="hidden" name="age"  value="<%= animal.age %>"/>

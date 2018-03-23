@@ -71,7 +71,7 @@ class Animal
     animals = animals.map {|animal| Animal.new(animal)}
     return animals
   end
-  # select * from animals where LOWER(name) like LOWER('%ja%')
+  # select * from animals where LOWER(name) like LOWER('%ja%') AND
   def status_to_b()
     if @adopt_status == 't'
       return "True"
@@ -80,10 +80,10 @@ class Animal
   end
 
   def owners()
-  sql = "SELECT o.* FROM owners o INNER JOIN adoptions a ON a.owner_id = o.id WHERE a.animal_id = $1;"
-  values = [@id]
-  results = SqlRunner.run(sql, values)
-  return results.map { |owner| Owner.new(owner) }
-end
+    sql = "SELECT o.* FROM owners o INNER JOIN adoptions a ON a.owner_id = o.id WHERE a.animal_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |owner| Owner.new(owner) }
+  end
 
 end

@@ -1,25 +1,25 @@
-<form method="post" action="/all_animals/update/<%= @animal.id %>">
+<form method="post" action="/all_animals/<%= @animals.id %>">
 
   <label for="name">Name:</label>
-  <input type="text" name="name" id="name" />
+  <input type="text" name="name" id="name" value = "<%= @animals.name %>"/>
 
   <label for="age">Age:</label>
-  <input type="text" name="age" id="age" />
+  <input type="text" name="age" id="age" value = "<%= @animals.age %>"/>
 
   <label for="type">Type:</label>
-  <input type="text" name="type" id="type" />
+  <input type="text" name="type" id="type" value "<%= @animals.type %>"/>
 
   <label for="breed">Breed:</label>
-  <input type="text" name="breed" id="breed" />
+  <input type="text" name="breed" id="breed" value "<%= @animals.breed %>"/>
 
   <label for="adopt_status">Adoption Status:</label>
   <select class="" name="adopt_status" id="adopt_status">
-    <option value="true">True</option>
-    <option value="false">False</option>
+    <option value="true" <%= "selected" if @animals.adopt_status == "true" %>>True</option>
+    <option value="false" <%= "selected" if @animals.adopt_status == "false" %>>False</option>
   </select>
 
-  <label for="admittion_date">Admittion Status:</label>
-  <input type="text" name="admittion_date" id="admittion_date" />
+  <label for="admittion_date">Admittion Date:</label>
+  <input type="text" name="admittion_date" id="admittion_date" value = "<%= @animals.name %>"/>
 
   <input type="submit" value="Update Animal"/>
 
