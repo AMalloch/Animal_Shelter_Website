@@ -1,5 +1,4 @@
 <h2><a class="link" href="/all_owners/new">Add new owner</a></h2>
-<h2><a class="link" href="/all_animals/update">Update an owners details</a></h2>
 
 <% @owners.each do |owner| %>
 
@@ -12,6 +11,7 @@
   <p>Postcode: <%= owner.post_code %></p>
   <p>Email_address: <%= owner.email_address %></p>
   <p>Phone number: <%= owner.phone_number %></p>
+  <h2><a class="link" href="/all_owners/<%= owner.id %>/edit">Update an owners details</a></h2>
   <form class="" action="/all_owners/<%= owner.id %>/delete" method="post">
     <input type="hidden" name="first_name" value="<%= owner.first_name %>"/>
     <input type="hidden" name="second_name"  value="<%= owner.second_name %>"/>
