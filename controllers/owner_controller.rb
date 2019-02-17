@@ -10,9 +10,20 @@ get '/all_owners/new' do
   erb(:'/allowners/new')
 end
 
+get '/all_owners/:id/edit' do
+  @owner = Owner.find(params[:id])
+  erb(:'/allowners/update')
+end
+
 post '/all_owners' do
   owner = Owner.new(params)
   owner.save
+  redirect to '/all_owners'
+end
+
+post '/all_owners/:id' do
+  owner = Owner.new(params)
+  owner.update
   redirect to '/all_owners'
 end
 
