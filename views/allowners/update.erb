@@ -1,0 +1,29 @@
+<form method="post" action="/all_owners/<%= @owner.id %>">
+
+  <label for="name">First name:</label>
+  <input type="text" name="name" id="name" value = "<%= @owner.first_name %>"/>
+
+  <label for="name">Surname name:</label>
+  <input type="text" name="name" id="name" value = "<%= @owner.second_name %>"/>
+
+  <label for="age">Date of birth:</label>
+  <input type="text" name="age" id="age" value = "<%= @owner.dob %>"/>
+
+  <label for="type">Address:</label>
+  <input type="text" name="type" id="type" value "<%= @owner.address %>"/>
+
+  <label for="type">City:</label>
+  <input type="text" name="type" id="type" value "<%= @owner.city %>"/>
+
+  <label for="type">Postcode:</label>
+  <input type="text" name="type" id="type" value "<%= @owner.post_code %>"/>
+
+  <label for="type">Email address:</label>
+  <input type="text" name="type" id="type" value "<%= @owner.email_address %>"/>
+
+  <label for="breed">Phone number:</label>
+  <input type="text" name="breed" id="breed" value "<%= @owner.phone_number %>"/>
+
+  <input type="submit" value="Update Owner"/>
+
+</form>
